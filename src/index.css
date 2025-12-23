@@ -1,0 +1,154 @@
+@import './fonts.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Design tokens — noir editorial theme */
+  --bg-0: #070606;
+  --bg-1: #0f0f10;
+  --panel: rgba(255,255,255,0.03);
+  --text: #eef2f3;
+  --muted: #9aa0a6;
+  --accent: #ffb703; /* warm amber accent */
+  --accent-2: #00d4ff; /* cyan counter-accent */
+  --glass: rgba(255,255,255,0.04);
+  --radius: 12px;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Merriweather Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--bg-0);
+  color: var(--text);
+  overflow-x: hidden;
+  min-height: 100vh;
+  line-height: 1.45;
+  font-size: 14px;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+h1, h2, h3, .font-display {
+  font-family: 'Azonix', 'Cormorant Garamond', serif;
+  letter-spacing: 0.02em;
+}
+
+.font-body {
+  font-family: 'Merriweather Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/* Layered atmospheric background — animated fade effect */
+.site-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Base layer */
+.site-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15,15,16,1) 0%, rgba(10,10,11,1) 40%, rgba(6,6,7,1) 100%);
+  animation: fadePulse 8s ease-in-out infinite;
+}
+
+/* Accent layer 1 - warm amber fade */
+.site-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(1200px 600px at 10% 20%, rgba(255,183,3,0.12), transparent 15%);
+  animation: fadeAccent1 12s ease-in-out infinite;
+}
+
+/* Accent layer 2 - cyan fade */
+.site-background {
+  background-image: radial-gradient(900px 500px at 90% 80%, rgba(0,212,255,0.08), transparent 15%);
+  animation: fadeAccent2 14s ease-in-out infinite;
+}
+
+@keyframes fadePulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.85; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeAccent1 {
+  0% { opacity: 0.3; transform: translate(0, 0); }
+  50% { opacity: 0.8; transform: translate(20px, -20px); }
+  100% { opacity: 0.3; transform: translate(0, 0); }
+}
+
+@keyframes fadeAccent2 {
+  0% { opacity: 0.2; transform: translate(0, 0); }
+  50% { opacity: 0.6; transform: translate(-25px, 15px); }
+  100% { opacity: 0.2; transform: translate(0, 0); }
+}
+
+/* Noise texture overlay */
+.site-noise {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.004) 0 1px, transparent 1px 6px);
+  mix-blend-mode: overlay;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Purposeful entrance: staggered reveal */
+.reveal { opacity: 0; transform: translateY(14px) scale(0.995); }
+.reveal.is-visible { animation: revealUp 700ms cubic-bezier(.2,.9,.3,1) forwards; }
+
+@keyframes revealUp {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Hero title: display-first impression */
+.hero-title {
+  font-family: 'Azonix', 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 6vw, 64px);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.6px rgba(0,0,0,0.18);
+  text-shadow: 0 6px 24px rgba(0,0,0,0.6), 0 1px 0 rgba(255,255,255,0.02) inset;
+}
+
+/* Accent button style */
+.btn-accent {
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent-2) 20%));
+  color: #081018;
+  font-weight: 700;
+  padding: 0.8rem 1.25rem;
+  border-radius: 999px;
+  box-shadow: 0 6px 24px rgba(255,183,3,0.08), 0 1px 0 rgba(255,255,255,0.02) inset;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn-accent:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(255,183,3,0.12); }
+
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Azonix';
+  src: url('./components/Fonts/Azonix.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Display / Serif pairing — expressive and editorial */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Merriweather+Sans:wght@300;400;700&display=swap');
+
+/* Utility font classes:
+   - .font-display: bold, character-rich headings
+   - .font-serif: editorial, humanist serif for accents
+   - .font-ui: readable sans for body and UI
+*/
+
+.font-display { font-family: 'Azonix', 'Cormorant Garamond', serif; }
+.font-serif { font-family: 'Cormorant Garamond', serif; }
+.font-ui { font-family: 'Merriweather Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; }
