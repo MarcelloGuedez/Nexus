@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
-import AnimatedBackground from "@/components/AnimatedBackground";
+import ProceduralGroundBackground from "@/components/ui/procedural-ground-background";
 import BackToTopButton from "@/components/BackToTopButton";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -26,7 +26,7 @@ function App() {
       <div className="relative min-h-screen bg-black text-white">
         <div className="site-background"></div>
         <div className="site-noise"></div>
-        <AnimatedBackground />
+        <ProceduralGroundBackground />
         
         <Header />
         

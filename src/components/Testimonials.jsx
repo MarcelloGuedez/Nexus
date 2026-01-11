@@ -1,7 +1,7 @@
 "use client";
-import React, { useState, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { AnimatedTestimonialsDemo } from '@/components/ui/animated-testimonials';
 
 const testimonials = [
   {
@@ -159,14 +159,14 @@ export default function TestimonialsSection() {
             Resultados reais. Histórias verdadeiras.
           </p>
         </motion.div>
-        <TestimonialSlider testimonials={testimonials} />
+        <AnimatedTestimonialsDemo />
         <div className="text-center mt-16">
           <motion.a
             href="#orcamento"
-            whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(255, 0, 0, 0.4)", backgroundColor: '#c8102e' }}
+            whileHover={{ scale: 1.05, backgroundColor: '#c8102e' }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center px-8 py-4 text-white font-bold rounded-md shadow-lg transition-colors font-display tracking-wider"
-            style={{ backgroundColor: 'red', boxShadow: '0px 4px 20px rgba(255, 0, 0, 0.3)' }}
+            style={{ backgroundColor: 'red', boxShadow: '0px 4px 20px rgba(255, 0, 0, 0.4)' }}
           >
             Quero ser o próximo case de sucesso
           </motion.a>

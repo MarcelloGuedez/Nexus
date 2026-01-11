@@ -31,19 +31,11 @@ const About = () => {
             className="space-y-6"
           > 
             <h2 className="text-4xl md:text-5xl font-azonix text-center md:text-left text-black">
-              Mais do que uma agência, <br /> somos o seu <span className="text-black">time de marketing.</span>
+              Mais do que uma agência, <br /> o seu <span className="text-black">time de marketing.</span>
             </h2>
-            <p className="text-xl md:text-2xl font-display text-center md:text-left" style={{color: 'red'}}>Estratégia, criação e performance que impulsionam marcas de verdade.</p>
+            <p className="text-xl md:text-2xl font-display text-center md:text-left" style={{color: 'red'}}>Criação que impacta. Estratégia que converte.</p>
             <p className="text-gray-600 leading-relaxed text-justify font-display">
-              A Nexus nasceu da vontade de fazer diferente. Tudo começou com o desejo de oferecer resultados reais para pequenas empresas — mas logo veio a percepção de que, sem planejamento e qualidade visual, nenhuma marca alcança seu verdadeiro potencial.
-            </p>
-
-            <p className="text-gray-600 leading-relaxed text-justify font-display">
-              Foi assim que o audiovisual se tornou nossa essência e a estratégia, nossa base. O que começou como gestão de redes sociais evoluiu para uma agência completa: posicionamento, planejamento, tráfego pago, design, captação de conteúdo, sites e vídeos profissionais.
-            </p>
-            
-            <p className="text-gray-600 leading-relaxed text-justify font-display">
-              Hoje, somos o time de marketing que pensa e executa com você — cuidando de cada detalhe para que sua marca cresça com propósito, presença e resultado.
+              Unimos a força do audiovisual com estratégias de performance para impulsionar marcas de verdade. Não entregamos apenas posts, mas uma solução completa: posicionamento, tráfego pago, design e produção de conteúdo de alto nível.
             </p>
 
             <div className="text-center md:text-left">

@@ -1,58 +1,54 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from 'react';
 
-const AnimatedBackground = () => {
+const AnimatedBackground = ({ color = '200,16,46', numStars = 800, speed = 0.04 }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
-    let animationFrameId;
+    const ctx = canvas.getContext('2d');
+    let animationId;
     let stars = [];
-    const numStars = 1000;
-    const warpSpeed = 0.05;
 
-    // More robust resize function
-    const resizeCanvas = () => {
-      // Use the element's actual size for the drawing buffer
-      canvas.width = canvas.clientWidth;
-      canvas.height = canvas.clientHeight;
-      // Re-initialize stars on resize to fit the new dimensions
-      init(); 
+    const setSize = () => {
+      const dpr = window.devicePixelRatio || 1;
+      const w = Math.max(1, window.innerWidth);
+      const h = Math.max(1, window.innerHeight);
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      canvas.style.width = `${w}px`;
+      canvas.style.height = `${h}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
-    window.addEventListener("resize", resizeCanvas);
-    
     class Star {
       constructor() {
-        this.x = Math.random() * canvas.width - canvas.width / 2;
-        this.y = Math.random() * canvas.height - canvas.height / 2;
-        this.z = Math.random() * canvas.width;
+        this.reset(true);
+      }
+
+      reset(initial = false) {
+        this.x = Math.random() * canvas.clientWidth;
+        this.y = Math.random() * canvas.clientHeight;
+        this.z = initial ? Math.random() * canvas.clientWidth : canvas.clientWidth;
+        this.v = Math.random() * 0.6 + 0.2;
       }
 
       update() {
-        this.z -= warpSpeed;
-        if (this.z < 1) {
-          this.z = canvas.width;
-          this.x = Math.random() * canvas.width - canvas.width / 2;
-          this.y = Math.random() * canvas.height - canvas.height / 2;
-        }
+        this.z -= speed * (this.v * 2 + 0.5);
+        if (this.z < 1) this.reset(false);
       }
 
       draw() {
-        const sx = (this.x / this.z) * (canvas.width / 2) + (canvas.width / 2);
-        const sy = (this.y / this.z) * (canvas.height / 2) + (canvas.height / 2);
+        const sx = (this.x - canvas.clientWidth / 2) / (this.z / (canvas.clientWidth / 2)) + canvas.clientWidth / 2;
+        const sy = (this.y - canvas.clientHeight / 2) / (this.z / (canvas.clientHeight / 2)) + canvas.clientHeight / 2;
+        const alpha = Math.max(0, 1 - this.z / canvas.clientWidth);
+        const r = Math.max(0.3, (1 - this.z / canvas.clientWidth) * 2.8);
 
-        // Don't draw if the star is off-screen
-        if (sx < 0 || sx > canvas.width || sy < 0 || sy > canvas.height) {
-          return;
-        }
+        if (sx < -50 || sx > canvas.clientWidth + 50 || sy < -50 || sy > canvas.clientHeight + 50) return;
 
-        const r = Math.max(0.1, (1 - this.z / canvas.width) * 2.5);
-        
         ctx.beginPath();
-        ctx.fillStyle = `rgba(255, 0, 0, ${1 - this.z / canvas.width})`;
+        ctx.fillStyle = `rgba(${color}, ${alpha})`;
         ctx.arc(sx, sy, r, 0, Math.PI * 2);
         ctx.fill();
       }
@@ -60,41 +56,44 @@ const AnimatedBackground = () => {
 
     const init = () => {
       stars = [];
-      for (let i = 0; i < numStars; i++) {
-        stars.push(new Star());
-      }
+      for (let i = 0; i < numStars; i++) stars.push(new Star());
+    };
+
+    const resizeHandler = () => {
+      setSize();
+      init();
     };
 
     const animate = () => {
-      // Check for valid canvas dimensions before drawing
-      if (canvas.width > 0 && canvas.height > 0) {
-        ctx.fillStyle = "rgba(0, 0, 0, 0.2)"; // Trail effect
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
-        stars.forEach((star) => {
-          star.update();
-          star.draw();
-        });
+      ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+
+      ctx.fillStyle = 'rgba(0,0,0,0.12)';
+      ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+
+      for (let i = 0; i < stars.length; i++) {
+        stars[i].update();
+        stars[i].draw();
       }
 
-      animationFrameId = requestAnimationFrame(animate);
+      animationId = requestAnimationFrame(animate);
     };
 
-    // Initial resize and start animation
-    resizeCanvas();
-    animate();
+    setSize();
+    init();
+    window.addEventListener('resize', resizeHandler);
+    animationId = requestAnimationFrame(animate);
 
     return () => {
-      window.removeEventListener("resize", resizeCanvas);
-      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('resize', resizeHandler);
+      cancelAnimationFrame(animationId);
     };
-  }, []);
+  }, [color, numStars, speed]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none"
-      style={{ background: "#000000" }}
+      className="fixed top-0 left-0 w-screen h-screen pointer-events-none"
+      style={{ background: 'transparent', zIndex: -1 }}
     />
   );
 };
