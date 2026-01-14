@@ -72,7 +72,7 @@ const Header = () => {
               <motion.a href="mailto:nexus.mktd@gmail.com" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.1, backgroundColor: 'rgb(255, 0, 0)', color: '#fff' }} className="p-2 bg-zinc-900 text-white transition-colors rounded-md">
                 <Mail size={20} />
               </motion.a>
-              <motion.a href="https.instagram.com/nexus_mktd/" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.1, backgroundColor: 'rgb(255, 0, 0)', color: '#fff' }} className="p-2 bg-zinc-900 text-white transition-colors rounded-md">
+              <motion.a href="https://instagram.com/nexus_mktd/" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.1, backgroundColor: 'rgb(255, 0, 0)', color: '#fff' }} className="p-2 bg-zinc-900 text-white transition-colors rounded-md">
                 <Instagram size={20} />
               </motion.a>
             </div>

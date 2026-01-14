@@ -133,7 +133,7 @@ const TestimonialSlider = ({ testimonials: testimonialsData, className }) => {
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`h-2 w-2 rounded-full transition-all duration-300 ${currentIndex === index ? 'w-4 bg-red-600' : 'bg-gray-400'}`}
-            style={{backgroundColor: currentIndex === index ? 'red' : '#D1D5DB'}}
+            style={{backgroundColor: currentIndex === index ? '#c8102e' : '#D1D5DB'}}
             aria-label={`Go to testimonial ${index + 1}`}
           />
         ))}
@@ -165,8 +165,8 @@ export default function TestimonialsSection() {
             href="#orcamento"
             whileHover={{ scale: 1.05, backgroundColor: '#c8102e' }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center px-8 py-4 text-white font-bold rounded-md shadow-lg transition-colors font-display tracking-wider"
-            style={{ backgroundColor: 'red', boxShadow: '0px 4px 20px rgba(255, 0, 0, 0.4)' }}
+            className="inline-flex items-center px-8 py-4 text-white font-bold rounded-md shadow-lg transition-colors font-sub tracking-wider"
+            style={{ backgroundColor: '#c8102e', boxShadow: '0px 4px 20px #c8102e' }}
           >
             Quero ser o próximo case de sucesso
           </motion.a>

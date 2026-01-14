@@ -31,7 +31,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, backgroundColor: '#c8102e' }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 font-bold shadow-lg transition-colors font-display tracking-wider rounded-lg"
+                className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 font-bold shadow-lg transition-colors font-sub tracking-wider rounded-lg"
                 style={{backgroundColor: 'red'}}
               >
                 <MessageCircle className="mr-2" size={20} />
@@ -41,7 +41,7 @@ const Contact = () => {
                 href="#formulario-proposta" // Ajuste este link para o seu formulário
                 whileHover={{ scale: 1.05, backgroundColor: '#333' }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-white/10 text-white font-bold shadow-lg transition-colors font-display tracking-wider rounded-lg border border-white/20"
+                className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-white/10 text-white font-bold shadow-lg transition-colors font-sub tracking-wider rounded-lg border border-white/20"
               >
                 <FileText className="mr-2" size={20} />
                 Solicitar proposta personalizada

@@ -19,6 +19,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         azonix: ['Azonix', 'sans-serif'],
+        rajdhani: ['Rajdhani', 'sans-serif'],
       },
     },
   },

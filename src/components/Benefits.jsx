@@ -13,23 +13,23 @@ const Benefits = () => {
   ];
 
   return (
-    <section id="beneficios" className="relative py-20  bg-white">
+    <section id="beneficios" className="relative py-12 sm:py-20 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-            <h2 className="text-5xl md:text-6xl font-azonix mb-4 text-black">
+            <h2 className="text-4xl md:text-6xl font-azonix mb-4 text-black">
               Por que escolher a <span className="text-black">Nexus?</span>
             </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto font-display tracking-wide">
+            <p className="text-lg md:text-2xl text-gray-700 max-w-3xl mx-auto font-sub tracking-wide">
               Nosso maior compromisso é expandir seus resultados com estratégia e propósito.
             </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.title}
@@ -38,11 +38,11 @@ const Benefits = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.4 }}
               whileHover={{ y: -8, scale: 1.03, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
-              className="text-center p-8 bg-purple- rounded-lg shadow-lg transition-all duration-300 cursor-pointer"
+              className="text-center p-6 md:p-8 bg-gray-100 rounded-lg shadow-lg transition-all duration-300 cursor-pointer"
             >
                 <benefit.icon size={40} className="mx-auto mb-4 text-black" />
-                <h3 className="font-bold text-xl font-display tracking-wider mb-2" style={{color: 'red'}}>{benefit.title}</h3>
-                <p className="text-gray-600 text-sm font-display">{benefit.description}</p>
+                <h3 className="font-bold text-lg md:text-xl font-display tracking-wider mb-2 text-black">{benefit.title}</h3>
+                <p className="text-gray-600 text-base md:text-lg font-sub">{benefit.description}</p>
             </motion.div>
           ))}
         </div>

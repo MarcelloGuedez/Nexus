@@ -17,7 +17,7 @@ const Hero = () => {
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-azonix leading-tight mb-2"
         >
           Transforme sua presença digital <br />
-          em <span style={{color: 'red'}}>resultados reais.</span>
+          em <span style={{color: '#ff0000'}}>resultados reais.</span>
         </motion.h1>
 
         <motion.div
@@ -48,10 +48,10 @@ const Hero = () => {
         >
           <motion.a
             href="#orcamento"
-            whileHover={{ scale: 1.05, boxShadow: "0px 0px 30px rgba(255, 0, 0, 0.7)", backgroundColor: 'rgb(200, 16, 46)' }}
+            whileHover={{ scale: 1.05, boxShadow: "0px 0px 30px rgba(255, 0, 0, 0.7)", backgroundColor: '#c8102e' }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center px-6 py-2 text-sm sm:px-7 sm:py-3 sm:text-base text-white font-bold shadow-lg transition-all duration-300 font-display tracking-wider rounded-md"
-            style={{backgroundColor: 'rgb(255, 0, 0)', boxShadow: '0px 0px 20px rgba(255, 0, 0, 0.5)'}}
+            style={{backgroundColor: '#ff0000', boxShadow: '0px 0px 20px rgba(255, 0, 0, 0.5)'}}
           >
             <MessageCircle className="mr-2" size={20} />
             Solicite seu orçamento

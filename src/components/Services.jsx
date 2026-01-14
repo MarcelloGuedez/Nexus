@@ -63,7 +63,7 @@ const ServiceCard = ({ service, index }) => {
                   <h3 className="text-white font-bold text-lg font-displaytracking-wider mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-white/80 text-sm font-display">{service.description}</p>
+                  <p className="text-white/80 text-sm font-sub">{service.description}</p>
               </motion.div>
             )}
           </AnimatePresence>
@@ -122,7 +122,7 @@ const Services = () => {
           <h2 className="text-5xl md:text-6xl font-azonix mb-4 leading-tight text-white">
             Tudo o que sua marca precisa para crescer, <br /> em <span className="text-white">um só lugar.</span>
           </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto font-display tracking-wide">
+          <p className="text-3xl text-gray-300 max-w-3xl mx-auto font-sub tracking-wide">
             Estratégia, criação, tráfego e audiovisual conectados em resultados reais.
           </p>
         </motion.div>
@@ -135,7 +135,7 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: blockIndex * 0.2 }}
-                className="text-3xl font-display text-center mb-8 text-white"
+                className="text-3xl font-sub text-center mb-8 text-white"
               >
                 {block.category}
               </motion.h3>
@@ -158,7 +158,7 @@ const Services = () => {
             href="#orcamento"
             whileHover={{ scale: 1.05, backgroundColor: '#c8102e' }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center px-8 py-4 text-white font-bold rounded-md shadow-lg transition-colors font-displaytracking-wider"
+            className="inline-flex items-center px-8 py-4 text-white font-bold rounded-md shadow-lg transition-colors font-sub tracking-wider"
             style={{backgroundColor: 'red', boxShadow: '0px 4px 20px rgba(255, 0, 0, 0.5)'}}
           >
             <MessageSquare className="mr-2" size={20} />

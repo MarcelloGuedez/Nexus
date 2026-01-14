@@ -101,7 +101,7 @@ const Clients = () => {
           <h2 className="text-5xl md:text-6xl font-azonix mb-4 text-white">
             Trabalhos que <span className="text-white">falam por nós.</span>
           </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto font-display">Da estratégia ao vídeo final — tudo conectado a resultados reais.</p>
+          <p className="text-2xl text-gray-300 max-w-3xl mx-auto font-sub">Da estratégia ao vídeo final — tudo conectado a resultados reais.</p>
         </motion.div>
 
         <motion.div
@@ -149,7 +149,7 @@ const Clients = () => {
                 </div>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Projeto 1</h3>
-              <p className="text-gray-300 font-display">Identidade visual para cliente do setor automotivo.</p>
+              <p className="text-xl text-gray-300 font-sub">Identidade visual para cliente do setor automotivo.</p>
             </motion.div>
             {/* Projeto 2 */}
             <motion.div
@@ -172,7 +172,7 @@ const Clients = () => {
                 </div>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Projeto 2</h3>
-              <p className="text-gray-300 font-display">Campanha de social media para restaurante.</p>
+              <p className="text-xl text-gray-300 font-sub">Campanha de social media para restaurante.</p>
             </motion.div>
             {/* Projeto 3 */}
             <motion.div
@@ -195,7 +195,7 @@ const Clients = () => {
                 </div>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Projeto 3</h3>
-              <p className="text-gray-300 font-display">Edição de vídeo institucional para empresa parceira.</p>
+              <p className="text-xl text-gray-300 font-sub">Edição de vídeo institucional para empresa parceira.</p>
             </motion.div>
           </div>
           <div className="text-center mt-16">
@@ -205,7 +205,7 @@ const Clients = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, boxShadow: "0px 0px 30px rgba(255, 0, 0, 0.7)", backgroundColor: '#c8102e' }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center px-10 py-4 text-white font-bold text-lg shadow-xl transition-all duration-300 font-display tracking-wider rounded-md" 
+              className="inline-flex items-center px-10 py-4 text-white font-bold text-lg shadow-xl transition-all duration-300 font-sub tracking-wider rounded-md" 
               style={{backgroundColor: 'red', boxShadow: '0px 0px 20px rgba(255, 0, 0, 0.5)'}}
             >
               Ver Portfólio Completo
@@ -222,7 +222,7 @@ const Clients = () => {
               O <span className="text-white">Antes e Depois</span> que inspira
             </motion.h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <BeforeAfterSlider before="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" after="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&sat=150&con=50" title="Edição de Alimentos" description="Tratamento de cor e luz para realçar a textura e o apelo visual do prato." />
+              <BeforeAfterSlider before="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" after="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&sat=150&con=50" title="Edição de Alimentos" description="Tratamento de cor e luz para realçar a textura e o apelo visual do prato."  />
               <BeforeAfterSlider before="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" after="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&blend=FF0000&blend-alpha=30&blend-mode=multiply&sat=-100" title="Edição de Retrato" description="Ajuste de cores, iluminação e contraste para um resultado mais impactante." />
             </div>
           </div>

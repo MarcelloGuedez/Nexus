@@ -65,8 +65,8 @@ export const AnimatedTestimonials = ({ testimonials = [], autoplay = false, clas
             transition={{ duration: 0.2, ease: 'easeInOut' }}
           >
             <h3 className="text-2xl font-bold text-red-700">{testimonials[active].name}</h3>
-            <p className="text-sm text-red-600">{testimonials[active].designation}</p>
-            <motion.p className="text-lg text-red-700 mt-6">
+            <p className="text-sm text-red-600 font-bold">{testimonials[active].designation}</p>
+            <motion.p className="text-xl text-red-700 mt-6 font-sub">
               {testimonials[active].quote.split(' ').map((word, idx) => (
                 <motion.span
                   key={idx}

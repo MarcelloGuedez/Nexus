@@ -52,6 +52,18 @@ h1, h2, h3, .font-display {
   font-family: 'Merriweather Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
+.font-subtitle {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.subtitle {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
 /* Layered atmospheric background — animated fade effect */
 .site-background {
   position: fixed;
